@@ -364,6 +364,15 @@ curl "https://live-api.qiniu.com/server/items/live_1"
             "current_price":"199元",
             "origin_price":"298元",
             "status":1,
+            "record": {
+                "id": 78,
+                "record_url": "https://xxxxxx.com/xxxxxx.m3u8",
+                "start": 1671432645,
+                "end": 1671432771,
+                "status": 0,
+                "live_id": "live_1",
+                "item_id": "item_1"
+            },
             "extends": {
                 "age":"18"
             }
