@@ -2,6 +2,7 @@ package gift
 
 import (
 	"context"
+
 	"github.com/qbox/livekit/biz/live"
 	"github.com/qbox/livekit/biz/model"
 	"github.com/qbox/livekit/biz/notify"
@@ -75,7 +76,7 @@ func (s *Service) SendGift(context context.Context, req *SendGiftRequest, userId
 		log.Errorf("update gift status error %s", err.Error())
 		//该错误没有返回
 	}
-	if payResp.Status == model.SendGiftStatusFailure {
+	if payResp.Status != model.SendGiftStatusSuccess || payResp.Code != 0 {
 		return sResp, api.ErrorGiftPayFromBiz
 	}
 	notifyItem := BroadcastGiftNotifyItem{
